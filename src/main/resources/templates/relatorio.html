@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8" />
+	<meta lang="pt-br" />
+	<meta id="viewport" name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+
+	<title>Relatório</title>
+	<link rel="icon" type="image/png" th:href="@{/images/logo-example.png}" />
+
+	<!-- FONTE UBUNTU: -->
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
+
+	<!-- CSS: -->
+	<link rel="stylesheet" type="text/css" th:href="@{/css/normalize.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+	<div class="relatorioBox">
+		<div class="bgDarkTransparent">
+			<div class="logo">
+				<img th:src="@{/images/logo-example.png}" />
+			</div>
+			
+			<div class="title">
+				<h1>Relatório</h1>
+			</div>
+
+			<form method="GET" th:action="@{/public/relatorio/create}">
+				<div class="content">
+					<div class="group">
+						<label>
+							<span>Cliente:</span>
+							<select name="id-cliente">
+								<option value="0"></option>
+								<option th:each="cli : ${clientes}" th:value="${cli.id}" th:text="${cli.nome}"></option>
+							</select>
+						</label>
+					</div>
+
+					<div class="group dates">
+						<label>
+							<span>De:</span>
+							<input type="date" name="data-in"/>
+						</label>
+
+						<label>
+							<span>Até:</span>
+							<input type="date" name="data-fin"/>
+						</label>
+					</div>
+				</div>
+
+				<div class="submit">
+					<input type="submit" value="Gerar">
+				</div>
+			</form>
+
+			<div class="relatorioResult" th:if="${resultMode}">
+				Relatório gerado com sucesso! <br/> <a th:href="@{/archives/relatorioItensVenda/historico-de-compras.pdf}" download="historico-de-compras.pdf">Clique aqui</a> para baixar!
+			</div>
+		</div>
+	</div>
+
+	<script src="js/script.js"></script>
+
+</body>
+</html>

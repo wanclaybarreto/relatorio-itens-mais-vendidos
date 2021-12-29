@@ -1,0 +1,157 @@
+:root {
+    --color-1: #015987;
+    --color-2: #3e7dae;
+    --color-3: #99d3ff;
+    --color-4: #fdaa22;
+    --color-5: #C9861A;
+    --color-6: #FDC66D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', Arial, Liberation Sans;
+}
+
+.bgDarkTransparent {
+    width: 100%;
+    height: 100%;
+    padding: 0 10px 0 10px;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.6);
+    overflow-y: auto;
+}
+
+.relatorioBox {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-image: url("../images/bg-relatorio.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.relatorioBox .logo {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.relatorioBox .title {
+    text-align: center;
+    color: #FFF;
+}
+
+.relatorioBox .title h1 {
+    margin-top: 40px;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.relatorioBox form {
+    margin-top: 20px;
+}
+
+.relatorioBox form .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #FFF;
+}
+
+.relatorioBox form .group {
+	margin-top: 10px;
+    margin-left: 20px;
+}
+
+.relatorioBox form .group:nth-child(1) {
+    margin-left: 0;
+}
+
+.relatorioBox form .dates label {
+    margin-left: 15px;
+}
+
+.relatorioBox form .dates label:nth-child(1) {
+    margin-left: 0;
+}
+
+.relatorioBox form input, .relatorioBox form select {
+    height: 38px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.6);
+    border: none;
+    border-radius: 5px;
+    outline: 0;
+}
+
+.relatorioBox form .submit {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.relatorioBox form .submit input {
+    width: 100px;
+    background: #FFF;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.relatorioBox form .submit input:hover {
+    background: var(--color-3);
+}
+
+.relatorioBox form .submit input:active {
+    background: var(--color-1);
+}
+
+.relatorioBox .relatorioResult {
+    width: fit-content;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+    color: #FFF;
+}
+
+.relatorioBox .relatorioResult a {
+    color: #FFF;
+}
+
+@media (max-width: 768px) {
+    .relatorioBox .logo img {
+        width: 150px;
+    }
+
+    .relatorioBox .title h1 {
+        margin-top: 20px;
+    }
+
+    .relatorioBox form {
+        margin-top: 10px;
+    }
+
+    .relatorioBox form .group {
+        width: 100%;
+        margin: 0;
+        margin-top: 10px;
+    }
+
+    .relatorioBox form select {
+        width: 100%;
+    }
+
+    .relatorioBox form .dates label {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .relatorioBox form .dates label:nth-child(1) {
+        margin-bottom: 10px;
+    }
+}
